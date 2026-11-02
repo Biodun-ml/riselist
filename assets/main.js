@@ -270,14 +270,14 @@
       if ((c.g != null && c.g >= 25) || c.v >= 1.8) tags.push('<span class="tag hi">Rising</span>');
       if (c.a < 8) tags.push('<span class="tag">Rarely posts ads</span>');
       if (c.s) tags.push('<span class="tag">TikTok Shop</span>');
-      if (c.z) tags.push('<span class="tag">Storefront</span>');
+      if (c.z) tags.push('<span class="tag">Has a shop link</span>');
       var match = Math.min(98, Math.round(55 + clamp(p.score) * 43));
       var why = reasons.slice(0, 2).join(', ');
       why = why.charAt(0).toUpperCase() + why.slice(1) + '.';
       return '<article class="card" data-key="' + esc(c.h.length + ':' + hashKey(c.h)) + '">' +
         '<div class="top"><div class="who"><div class="avatar" aria-hidden="true">' + esc(c.h.charAt(0).toUpperCase()) + '</div>' +
         '<div><div class="handle">@' + esc(mask(c.h)) + '</div><div class="sub">' + fmt(c.f) + ' followers</div></div></div>' +
-        '<div class="match"><b>' + match + '%</b><span>match</span></div></div>' +
+        '<div class="match"><b>' + match + '%</b><span>fit</span></div></div>' +
         '<div class="vel">' + c.v.toFixed(1) + '×<small>views for every follower</small></div>' +
         '<div class="tags">' + tags.join('') + '</div>' +
         '<div class="row3"><div><span>Usual views</span><b>' + fmt(c.m) + '</b></div><div><span>Engagement</span><b>' + c.e.toFixed(1) + '%</b></div><div><span>Ads</span><b>' + Math.round(c.a) + '%</b></div></div>' +
