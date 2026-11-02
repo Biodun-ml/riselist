@@ -6,9 +6,10 @@
 
   /* ---------- Header + nav ---------- */
   var header = document.querySelector('.site-header');
-  var darkBlocks = Array.prototype.slice.call(document.querySelectorAll('.on-ink, .site-footer'));
+  var darkBlocks = Array.prototype.slice.call(document.querySelectorAll('section.on-ink, .site-footer'));
   var headerH = header ? header.offsetHeight : 76;
   var onScroll = function () {
+    if (!header) return;
     header.classList.toggle('scrolled', window.scrollY > 8);
     // Switch the header to its dark dress while a dark section sits underneath it
     var dark = false;
@@ -19,7 +20,7 @@
     header.classList.toggle('on-dark', dark);
   };
   window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', function () { headerH = header.offsetHeight; onScroll(); });
+  window.addEventListener('resize', function () { if (header) headerH = header.offsetHeight; onScroll(); });
   onScroll();
 
   var toggle = document.querySelector('.nav-toggle');
@@ -30,6 +31,9 @@
       toggle.setAttribute('aria-expanded', String(open));
       toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     });
+    function closeNav() { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); toggle.setAttribute('aria-label', 'Open menu'); }
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && nav.classList.contains('open')) { closeNav(); toggle.focus(); } });
+    document.addEventListener('click', function (e) { if (nav.classList.contains('open') && !nav.contains(e.target) && !toggle.contains(e.target)) closeNav(); });
     nav.addEventListener('click', function (e) {
       if (e.target.tagName === 'A') { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }
     });
@@ -184,6 +188,8 @@
         onStoryScroll();
       } else {
         window.removeEventListener('scroll', onStoryScroll);
+        var scrub = document.querySelector('.story-scrub');
+        if (scrub) scrub.classList.add('show');
         if (range) setWeek(parseFloat(range.value));
       }
     }
@@ -222,13 +228,14 @@
     function clamp(n) { return Math.max(0, Math.min(1, n)); }
     function fmt(n) { if (n >= 1e6) return (n / 1e6).toFixed(1).replace('.0', '') + 'M'; if (n >= 1e3) return (n / 1e3).toFixed(n >= 1e5 ? 0 : 1).replace('.0', '') + 'K'; return String(Math.round(n)); }
     function mask(h) { return h.length <= 5 ? h.charAt(0) + '•••' : h.slice(0, 2) + '•••' + h.slice(-2); }
+    function hashKey(str) { var h = 0; for (var i = 0; i < str.length; i++) h = (h * 31 + str.charCodeAt(i)) >>> 0; return h.toString(36); }
     function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
 
     function rank() {
       var cat = CATS.filter(function (c) { return c.id === state.cat; })[0];
       var size = SIZES.filter(function (s) { return s.id === state.size; })[0];
       var w = W[state.goal];
-      return DATA.filter(function (c) { return c.n === cat.id; }).map(function (c) {
+      var scored = DATA.filter(function (c) { return c.n === cat.id; }).map(function (c) {
         var parts = {
           reach: clamp((c.v - 0.3) / 3.2), trust: clamp(1 - c.a / 30), eng: clamp(c.e / 12),
           sell: c.s && c.z ? 1 : (c.s || c.z ? 0.7 : 0), steady: clamp(c.k), spike: clamp((c.t / Math.max(c.m, 1) - 1) / 3)
@@ -237,7 +244,16 @@
         var inSize = c.f >= size.min && c.f < size.max;
         if (!inSize) score -= 0.12;
         return { c: c, score: score, inSize: inSize, parts: parts };
-      }).sort(function (a, b) { return b.score - a.score; }).slice(0, 5);
+      }).sort(function (a, b) { return b.score - a.score; });
+      // Creators in the chosen size come first; we only top up with near-size creators if fewer than five fit
+      var fit = scored.filter(function (p) { return p.inSize; });
+      var near = scored.filter(function (p) { return !p.inSize; }).sort(function (a, b) {
+        // nearest to the chosen range first, then by score
+        var da = a.c.f < size.min ? size.min - a.c.f : a.c.f - size.max;
+        var db = b.c.f < size.min ? size.min - b.c.f : b.c.f - size.max;
+        return da - db || b.score - a.score;
+      });
+      return fit.slice(0, 5).concat(near.slice(0, Math.max(0, 5 - fit.length)));
     }
 
     function cardHtml(p, idx) {
@@ -248,7 +264,7 @@
       if (state.goal === 'trend' && p.parts.spike > 0.3) reasons.push('latest hit got ' + (c.t / c.m).toFixed(1) + '× their usual views');
       if (c.a < 8) reasons.push('almost never posts ads');
       if (c.e >= 10.5) reasons.push('audience engages well above average');
-      if (p.inSize) reasons.push('right in your size range');
+      reasons.push(p.inSize ? 'right in your size range' : 'close to your size range');
       if (reasons.length < 2) reasons.push('steady views, video after video');
       var tags = [];
       if ((c.g != null && c.g >= 25) || c.v >= 1.8) tags.push('<span class="tag hi">Rising</span>');
@@ -258,7 +274,7 @@
       var match = Math.min(98, Math.round(55 + clamp(p.score) * 43));
       var why = reasons.slice(0, 2).join(', ');
       why = why.charAt(0).toUpperCase() + why.slice(1) + '.';
-      return '<article class="card" data-key="' + esc(c.h) + '">' +
+      return '<article class="card" data-key="' + esc(c.h.length + ':' + hashKey(c.h)) + '">' +
         '<div class="top"><div class="who"><div class="avatar" aria-hidden="true">' + esc(c.h.charAt(0).toUpperCase()) + '</div>' +
         '<div><div class="handle">@' + esc(mask(c.h)) + '</div><div class="sub">' + fmt(c.f) + ' followers</div></div></div>' +
         '<div class="match"><b>' + match + '%</b><span>match</span></div></div>' +
@@ -315,8 +331,9 @@
 
     fetch('/assets/creators.json').then(function (r) { return r.json(); }).then(function (rows) {
       DATA = rows;
-      var have = {}; rows.forEach(function (r) { have[r.n] = true; });
-      var cats = CATS.filter(function (c) { return have[c.id]; });
+      // Only offer categories with enough sample creators to make a real shortlist
+      var have = {}; rows.forEach(function (r) { have[r.n] = (have[r.n] || 0) + 1; });
+      var cats = CATS.filter(function (c) { return (have[c.id] || 0) >= 5; });
       if (!have[state.cat] && cats.length) state.cat = cats[0].id;
       chips('cats', cats, 'cat');
       chips('goals', GOALS, 'goal');

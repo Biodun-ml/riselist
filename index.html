@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Riselist — Book TikTok creators before their price catches up</title>
+  <script>document.documentElement.className += " js";</script>
   <meta name="description" content="Riselist finds TikTok creators whose views are rising faster than their price, checks each one by hand, and gives brands a shortlist that sells.">
   <meta name="theme-color" content="#EEF0EF">
   <link rel="canonical" href="https://getriselist.com/">
@@ -13,10 +14,19 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://getriselist.com/">
   <meta property="og:image" content="https://getriselist.com/assets/og.png">
+  <meta property="og:site_name" content="Riselist">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Riselist: Book TikTok creators before their price catches up.">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,0..100;1,9..144,300..600,0..100&family=Manrope:wght@400;500;600&display=swap">
+  <meta name="twitter:title" content="Riselist — Book TikTok creators before their price catches up">
+  <meta name="twitter:description" content="We find creators in the gap between rising views and rising prices, check each one by hand, and hand you a shortlist that sells.">
+  <meta name="twitter:image" content="https://getriselist.com/assets/og.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+  <link rel="preload" href="/assets/fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/manrope-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/fonts.css">
   <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
@@ -29,7 +39,7 @@
       <span class="brand-name">Riselist</span>
     </a>
     <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
-      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h14M3 10h14M3 14h14"></path></svg>
+      <svg class="ico-open" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"></path></svg><svg class="ico-close" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15"></path></svg>
     </button>
     <nav class="nav" id="nav" aria-label="Main">
       <a href="#demo">Try it</a>
@@ -72,13 +82,13 @@
             </linearGradient>
           </defs>
           <rect class="window" x="0" y="20" width="0" height="236" rx="14" fill="rgba(47,93,80,0.08)"></rect>
-          <text class="window-label" x="0" y="44" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="14" fill="#2F5D50" opacity="0">We book here</text>
+          <text class="window-label" x="0" y="44" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="20" fill="#2F5D50" opacity="0">We book here</text>
           <line x1="30" y1="256" x2="570" y2="256" stroke="rgba(18,27,28,0.18)" stroke-width="1"></line>
           <path class="price-path" d="" fill="none" stroke="#121B1C" stroke-width="1.5" stroke-dasharray="2 7" stroke-linecap="round"></path>
           <path class="views-path" d="" fill="none" stroke="url(#viewsGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
           <circle class="views-dot" cx="30" cy="256" r="6" fill="#E3C9A8" stroke="#F7F7F4" stroke-width="2"></circle>
-          <text x="30" y="282" font-family="Manrope, system-ui, sans-serif" font-size="12" fill="#5B6664">Week 0</text>
-          <text x="570" y="282" text-anchor="end" font-family="Manrope, system-ui, sans-serif" font-size="12" fill="#5B6664">Week 12</text>
+          <text x="30" y="282" font-family="Manrope, system-ui, sans-serif" font-size="17" fill="#5B6664">Week 0</text>
+          <text x="570" y="282" text-anchor="end" font-family="Manrope, system-ui, sans-serif" font-size="17" fill="#5B6664">Week 12</text>
         </svg>
         <div class="legend" aria-hidden="true"><span><i></i>Their views</span><span><i class="dot"></i>Their price</span></div>
         <p class="caption">An illustration of a typical rise, not a real creator.</p>
@@ -101,7 +111,7 @@
           <div class="inner">
             <p class="label">The window</p>
             <h2 id="story-title">Timing is the whole advantage.</h2>
-            <p class="lead">Scroll, and watch twelve weeks in the life of a rising creator.</p>
+            <p class="lead">Scroll, or move the slider, and watch twelve weeks in the life of a rising creator.</p>
           </div>
         </div>
         <div class="story-step" data-week="1.5">
@@ -112,7 +122,7 @@
         </div>
         <div class="story-step" data-week="5">
           <div class="inner">
-            <h3>Week five. The views arrive. The price hasn't.</h3>
+            <h3>Week five. The views arrive.<br>The price hasn't.</h3>
             <p>Their videos are pulling eighty, ninety thousand views, and they still charge a small-creator fee. This is where we book.</p>
           </div>
         </div>
@@ -144,13 +154,13 @@
               </linearGradient>
             </defs>
             <rect class="window" x="0" y="20" width="0" height="236" rx="14" fill="rgba(227,201,168,0.10)"></rect>
-            <text class="window-label" x="0" y="44" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="14" fill="#E3C9A8" opacity="0">We book here</text>
+            <text class="window-label" x="0" y="44" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="20" fill="#E3C9A8" opacity="0">We book here</text>
             <line x1="30" y1="256" x2="570" y2="256" stroke="rgba(236,233,225,0.22)" stroke-width="1"></line>
             <path class="price-path" d="" fill="none" stroke="#ECE9E1" stroke-width="1.5" stroke-dasharray="2 7" stroke-linecap="round"></path>
             <path class="views-path" d="" fill="none" stroke="url(#viewsGrad2)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
             <circle class="views-dot" cx="30" cy="256" r="6" fill="#E3C9A8" stroke="#1B2627" stroke-width="2"></circle>
-            <text x="30" y="282" font-family="Manrope, system-ui, sans-serif" font-size="12" fill="rgba(236,233,225,0.6)">Week 0</text>
-            <text x="570" y="282" text-anchor="end" font-family="Manrope, system-ui, sans-serif" font-size="12" fill="rgba(236,233,225,0.6)">Week 12</text>
+            <text x="30" y="282" font-family="Manrope, system-ui, sans-serif" font-size="17" fill="rgba(236,233,225,0.6)">Week 0</text>
+            <text x="570" y="282" text-anchor="end" font-family="Manrope, system-ui, sans-serif" font-size="17" fill="rgba(236,233,225,0.6)">Week 12</text>
           </svg>
           <div class="legend" aria-hidden="true"><span><i></i>Their views</span><span><i class="dot"></i>Their price</span></div>
           <div class="stats" aria-live="polite">
@@ -230,7 +240,7 @@
       </div>
       <ol class="steps stagger">
         <li><h3>Tell us about your brand</h3><p>What you sell, who buys it, your budget, and whether you want sales, attention or a trend.</p></li>
-        <li><h3>Receive a checked shortlist</h3><p>Our system ranks every creator against your brief. Then a person on our team reviews each one before it reaches you.</p></li>
+        <li><h3>Receive a checked shortlist</h3><p>Our system ranks every creator against your brief. Then we review each one by hand before it reaches you.</p></li>
         <li><h3>Reach out and go live</h3><p>Send our personal pitch to each creator yourself, or let us handle the outreach and agree the terms for you.</p></li>
       </ol>
     </div>
@@ -266,18 +276,18 @@
             <li>Everything in Shortlist, with 30 creators</li>
             <li>We email and follow up for you</li>
             <li>We agree rates and terms</li>
-            <li>Five to ten creators confirmed and ready to post</li>
+            <li>Typically five to ten creators confirmed and ready to post</li>
           </ul>
           <a class="btn btn-primary" href="#book">Start a sprint</a>
         </div>
         <div class="plan">
           <h3>Managed Campaign</h3>
           <p class="price">15%<small>of creator budget, $750 minimum</small></p>
-          <p class="muted">We run it from start to finish.</p>
+          <p class="muted">We run the creator side from start to finish.</p>
           <ul>
             <li>Everything in Outreach Sprint</li>
             <li>Creative briefs and a posting schedule</li>
-            <li>We check every post is labelled as an ad</li>
+            <li>We remind creators to label every post as an ad, and check</li>
             <li>A results report: views, clicks and sales codes</li>
           </ul>
           <a class="btn btn-ghost" href="#book">Talk to us</a>
@@ -285,7 +295,7 @@
       </div>
       <div class="promise reveal">
         <b>Our promise</b>
-        <span class="muted">If fewer than three creators on your list reply, we find you new ones at no cost.</span>
+        <span class="muted">Outreach Sprint and Managed Campaign: if fewer than three creators reply within 30 days, we find you new ones at no cost.</span>
       </div>
     </div>
   </section>
@@ -319,7 +329,7 @@
       </div>
       <div class="faq reveal">
         <h2 class="faq-title">Questions</h2>
-        <details><summary>Where does your data come from?</summary><p>From public creator profiles, and from creators who connect their own accounts. A person on our team looks at every profile before it is added. We refresh the numbers every week.</p></details>
+        <details><summary>Where does your data come from?</summary><p>From public creator profiles and, soon, from creators who connect their own accounts. We look at every profile before it is added. We refresh the numbers every week.</p></details>
         <details><summary>Are you part of TikTok?</summary><p>No. Riselist is an independent company. We are not connected to, or approved by, TikTok.</p></details>
         <details><summary>Which countries do you work in?</summary><p>Everywhere. Tell us where your customers are and we find creators whose audience lives there.</p></details>
         <details><summary>Do you guarantee sales?</summary><p>No one honestly can. What we do is stack the odds: creators with real reach, a trusted voice, and a record of selling.</p></details>
@@ -337,6 +347,7 @@
         <a href="/privacy.html">Privacy</a>
         <a href="/terms.html">Terms</a>
         <a href="/creators.html">Creator data and removal</a>
+        <a href="/outreach-rules.html">Outreach rules</a>
         <a href="/cookies.html">Cookies</a>
       </nav>
     </div>

@@ -4,12 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Page not found — Riselist</title>
+  <script>document.documentElement.className += " js";</script>
   <meta name="description" content="The page you asked for is not here.">
   <meta name="theme-color" content="#EEF0EF">
+  <link rel="canonical" href="https://getriselist.com/">
+  <meta property="og:title" content="Page not found — Riselist">
+  <meta property="og:description" content="The page you asked for is not here.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://getriselist.com/">
+  <meta property="og:site_name" content="Riselist">
+  <meta property="og:image" content="https://getriselist.com/assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,0..100;1,9..144,300..600,0..100&family=Manrope:wght@400;500;600&display=swap">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/manrope-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/fonts.css">
   <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
@@ -21,7 +32,7 @@
       <span class="brand-name">Riselist</span>
     </a>
     <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
-      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h14M3 10h14M3 14h14"></path></svg>
+      <svg class="ico-open" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"></path></svg><svg class="ico-close" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15"></path></svg>
     </button>
     <nav class="nav" id="nav" aria-label="Main">
       <a href="/#demo">Try it</a>
@@ -48,6 +59,7 @@
         <a href="/privacy.html">Privacy</a>
         <a href="/terms.html">Terms</a>
         <a href="/creators.html">Creator data and removal</a>
+        <a href="/outreach-rules.html">Outreach rules</a>
         <a href="/cookies.html">Cookies</a>
       </nav>
     </div>
