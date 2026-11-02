@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Riselist — Book TikTok creators before their price catches up</title>
+  <meta name="description" content="Riselist finds TikTok creators whose views are rising faster than their price, checks each one by hand, and gives brands a shortlist that sells.">
+  <meta name="theme-color" content="#EEF0EF">
+  <link rel="canonical" href="https://getriselist.com/">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="Riselist — Book TikTok creators before their price catches up">
+  <meta property="og:description" content="We find creators in the gap between rising views and rising prices, check each one by hand, and hand you a shortlist that sells.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://getriselist.com/">
+  <meta property="og:image" content="https://getriselist.com/assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,0..100;1,9..144,300..600,0..100&family=Manrope:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header" id="top">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Riselist home">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 19a10 10 0 0 1 20 0z" fill="#E3C9A8"></path><path d="M3 20h26" stroke="#121B1C" stroke-width="1.5" stroke-linecap="round"></path><path d="M8 25h16" stroke="#121B1C" stroke-width="1.5" stroke-linecap="round"></path></svg>
+      <span class="brand-name">Riselist</span>
+    </a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h14M3 10h14M3 14h14"></path></svg>
+    </button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#demo">Try it</a>
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="/creators.html">For creators</a>
+      <a class="btn btn-primary" href="#book">Book a call</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="dawn" aria-hidden="true"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+    <div class="wrap">
+      <div>
+        <p class="label rv d1">Creator partnerships, chosen early</p>
+        <h1 id="hero-title" class="rv d2">Book TikTok creators before their price catches up.</h1>
+        <p class="lead rv d3">On TikTok, views rise first and prices follow weeks later. We find creators in that gap, check each one by hand, and hand you a shortlist that sells.</p>
+        <div class="hero-actions rv d4">
+          <a class="btn btn-primary" href="#demo">See creators for your brand</a>
+          <a class="btn btn-ghost" href="#book">Book a 15-minute call</a>
+        </div>
+        <p class="hero-note rv d5">Creator data refreshed every week. Every shortlist reviewed by a person.</p>
+      </div>
+
+      <figure class="rise-card rv d3" aria-describedby="rise-desc">
+        <figcaption>
+          <span class="ttl">One creator, twelve weeks</span>
+          <span class="wk" id="hero-week">Week 0</span>
+        </figcaption>
+        <svg class="rise-svg" id="hero-svg" viewBox="0 0 600 300" role="img" aria-labelledby="rise-desc">
+          <desc id="rise-desc">A creator's views rise steeply from week two while their price only starts to rise around week seven. The gap between is when Riselist books them.</desc>
+          <defs>
+            <linearGradient id="viewsGrad" x1="0" x2="1" y1="0" y2="0">
+              <stop offset="0" stop-color="#2F5D50"></stop>
+              <stop offset="1" stop-color="#E3C9A8"></stop>
+            </linearGradient>
+          </defs>
+          <rect class="window" x="0" y="20" width="0" height="236" rx="14" fill="rgba(47,93,80,0.08)"></rect>
+          <text class="window-label" x="0" y="44" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="14" fill="#2F5D50" opacity="0">We book here</text>
+          <line x1="30" y1="256" x2="570" y2="256" stroke="rgba(18,27,28,0.18)" stroke-width="1"></line>
+          <path class="price-path" d="" fill="none" stroke="#121B1C" stroke-width="1.5" stroke-dasharray="2 7" stroke-linecap="round"></path>
+          <path class="views-path" d="" fill="none" stroke="url(#viewsGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+          <circle class="views-dot" cx="30" cy="256" r="6" fill="#E3C9A8" stroke="#F7F7F4" stroke-width="2"></circle>
+          <text x="30" y="282" font-family="Manrope, system-ui, sans-serif" font-size="12" fill="#5B6664">Week 0</text>
+          <text x="570" y="282" text-anchor="end" font-family="Manrope, system-ui, sans-serif" font-size="12" fill="#5B6664">Week 12</text>
+        </svg>
+        <div class="legend" aria-hidden="true"><span><i></i>Their views</span><span><i class="dot"></i>Their price</span></div>
+        <p class="caption">An illustration of a typical rise, not a real creator.</p>
+      </figure>
+    </div>
+  </section>
+
+  <!-- STATEMENT -->
+  <section class="statement reveal" aria-label="Our view">
+    <div class="wrap">
+      <p>Follower counts tell you who <em>was</em> famous. Views tell you who is <em>about to be</em>.</p>
+    </div>
+  </section>
+
+  <!-- SCROLL STORY -->
+  <section class="section on-ink story" id="why" aria-labelledby="story-title">
+    <div class="wrap">
+      <div class="story-steps" id="story-steps">
+        <div class="story-step active" data-week="0.5">
+          <div class="inner">
+            <p class="label">The window</p>
+            <h2 id="story-title">Timing is the whole advantage.</h2>
+            <p class="lead">Scroll, and watch twelve weeks in the life of a rising creator.</p>
+          </div>
+        </div>
+        <div class="story-step" data-week="1.5">
+          <div class="inner">
+            <h3>Week one. Nobody knows them yet.</h3>
+            <p>A few thousand followers, a handful of views. Not even the algorithm has noticed.</p>
+          </div>
+        </div>
+        <div class="story-step" data-week="5">
+          <div class="inner">
+            <h3>Week five. The views arrive. The price hasn't.</h3>
+            <p>Their videos are pulling eighty, ninety thousand views, and they still charge a small-creator fee. This is where we book.</p>
+          </div>
+        </div>
+        <div class="story-step" data-week="8.5">
+          <div class="inner">
+            <h3>Week eight. Brands have noticed.</h3>
+            <p>The price climbs fast. The views don't. You are now paying for the same audience at four times the cost.</p>
+          </div>
+        </div>
+        <div class="story-step" data-week="12">
+          <div class="inner">
+            <h3>Week twelve. Everyone wants them.</h3>
+            <p>Full price for an audience that was yours for a fraction of it two months ago. Riselist exists so that you never arrive here first.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-stage">
+        <figure class="rise-card">
+          <figcaption>
+            <span class="ttl">Views and price</span>
+            <span class="wk" id="story-week">Week 0</span>
+          </figcaption>
+          <svg class="rise-svg" id="story-svg" viewBox="0 0 600 300" role="img" aria-label="Chart that follows the text: views rise early, price rises late.">
+            <defs>
+              <linearGradient id="viewsGrad2" x1="0" x2="1" y1="0" y2="0">
+                <stop offset="0" stop-color="#8FB5A8"></stop>
+                <stop offset="1" stop-color="#E3C9A8"></stop>
+              </linearGradient>
+            </defs>
+            <rect class="window" x="0" y="20" width="0" height="236" rx="14" fill="rgba(227,201,168,0.10)"></rect>
+            <text class="window-label" x="0" y="44" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="14" fill="#E3C9A8" opacity="0">We book here</text>
+            <line x1="30" y1="256" x2="570" y2="256" stroke="rgba(236,233,225,0.22)" stroke-width="1"></line>
+            <path class="price-path" d="" fill="none" stroke="#ECE9E1" stroke-width="1.5" stroke-dasharray="2 7" stroke-linecap="round"></path>
+            <path class="views-path" d="" fill="none" stroke="url(#viewsGrad2)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+            <circle class="views-dot" cx="30" cy="256" r="6" fill="#E3C9A8" stroke="#1B2627" stroke-width="2"></circle>
+            <text x="30" y="282" font-family="Manrope, system-ui, sans-serif" font-size="12" fill="rgba(236,233,225,0.6)">Week 0</text>
+            <text x="570" y="282" text-anchor="end" font-family="Manrope, system-ui, sans-serif" font-size="12" fill="rgba(236,233,225,0.6)">Week 12</text>
+          </svg>
+          <div class="legend" aria-hidden="true"><span><i></i>Their views</span><span><i class="dot"></i>Their price</span></div>
+          <div class="stats" aria-live="polite">
+            <div class="stat"><b id="st-views">9K</b><span>Views per video</span></div>
+            <div class="stat"><b id="st-price">$120</b><span>Price per video</span></div>
+            <div class="stat hi"><b id="st-cpm">$13.80</b><span>You pay per 1,000 views</span></div>
+          </div>
+          <p class="verdict" id="st-verdict">Too early. Nobody knows them yet.</p>
+          <div class="story-scrub">
+            <label for="story-range">Move through the twelve weeks</label>
+            <input id="story-range" type="range" min="0" max="12" step="0.25" value="0">
+          </div>
+          <p class="caption">Illustrative figures. Real creators and prices vary.</p>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMO -->
+  <section class="section" id="demo" aria-labelledby="demo-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="label">A preview, with names hidden</p>
+        <h2 id="demo-title">Who should be talking about your brand?</h2>
+        <p class="lead">Choose what you sell and what you want. The list ranks itself, with a plain reason for every pick.</p>
+      </div>
+
+      <div class="controls reveal">
+        <div class="group">
+          <span class="muted small">What you sell</span>
+          <div class="chips" id="cats" role="group" aria-label="What you sell"></div>
+        </div>
+        <div class="control-row">
+          <div class="group">
+            <span>Your goal</span>
+            <div class="seg" id="goals" role="group" aria-label="Your goal"></div>
+          </div>
+          <div class="group">
+            <span>Preferred creator size</span>
+            <div class="seg" id="sizes" role="group" aria-label="Preferred creator size"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-summary">
+        <p class="ttl" id="demo-summary">Top skincare creators for more sales, ranked by fit.</p>
+        <p class="note">Sample profiles. Real shortlists use this week's data.</p>
+      </div>
+
+      <div class="cards" id="cards" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- WHAT WE CHECK -->
+  <section class="section on-ink" id="checks" aria-labelledby="checks-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="label">What we check</p>
+        <h2 id="checks-title">Five things a follower count will never tell you.</h2>
+      </div>
+      <ul class="checks stagger">
+        <li><h3>They punch above their size</h3><p>Their videos pull far more views than their follower count suggests. You pay a small-creator fee for a large-creator reach.</p></li>
+        <li><h3>Their audience still trusts them</h3><p>They rarely post ads. When they recommend you, people listen instead of scrolling past.</p></li>
+        <li><h3>They are early on every trend</h3><p>They pick up rising sounds within a day or two, so your product rides the wave rather than chasing it.</p></li>
+        <li><h3>They already know how to sell</h3><p>An active shop, a storefront, a promo code. Proof that their audience buys, not only watches.</p></li>
+        <li><h3>They are the affordable lookalike</h3><p>Name a famous creator you admire. We find smaller ones with the same style and audience, for a fraction of the fee.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="label">How it works</p>
+        <h2 id="how-title">From brief to booked in about a week.</h2>
+      </div>
+      <ol class="steps stagger">
+        <li><h3>Tell us about your brand</h3><p>What you sell, who buys it, your budget, and whether you want sales, attention or a trend.</p></li>
+        <li><h3>Receive a checked shortlist</h3><p>Our system ranks every creator against your brief. Then a person on our team reviews each one before it reaches you.</p></li>
+        <li><h3>Reach out and go live</h3><p>Send our personal pitch to each creator yourself, or let us handle the outreach and agree the terms for you.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section" id="pricing" aria-labelledby="pricing-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="label">Pricing</p>
+        <h2 id="pricing-title">Pay per campaign. No retainer.</h2>
+        <p class="lead">Start small, see it work, then grow. Prices in US dollars. Local pricing for African brands on request.</p>
+      </div>
+      <div class="plans stagger">
+        <div class="plan">
+          <h3>Shortlist</h3>
+          <p class="price">$149<small>per brief</small></p>
+          <p class="muted">You do the outreach. We find the right people.</p>
+          <ul>
+            <li>15 creators, each checked by a person</li>
+            <li>Why each one fits, in plain words</li>
+            <li>Their public business contact</li>
+            <li>A personal pitch email for each</li>
+            <li>Ready in 3 working days</li>
+          </ul>
+          <a class="btn btn-ghost" href="#book">Get a shortlist</a>
+        </div>
+        <div class="plan featured on-ink">
+          <h3>Outreach Sprint</h3>
+          <p class="price">$499<small>per campaign, plus creator fees</small></p>
+          <p class="muted">We find them, contact them and agree terms for you.</p>
+          <ul>
+            <li>Everything in Shortlist, with 30 creators</li>
+            <li>We email and follow up for you</li>
+            <li>We agree rates and terms</li>
+            <li>Five to ten creators confirmed and ready to post</li>
+          </ul>
+          <a class="btn btn-primary" href="#book">Start a sprint</a>
+        </div>
+        <div class="plan">
+          <h3>Managed Campaign</h3>
+          <p class="price">15%<small>of creator budget, $750 minimum</small></p>
+          <p class="muted">We run it from start to finish.</p>
+          <ul>
+            <li>Everything in Outreach Sprint</li>
+            <li>Creative briefs and a posting schedule</li>
+            <li>We check every post is labelled as an ad</li>
+            <li>A results report: views, clicks and sales codes</li>
+          </ul>
+          <a class="btn btn-ghost" href="#book">Talk to us</a>
+        </div>
+      </div>
+      <div class="promise reveal">
+        <b>Our promise</b>
+        <span class="muted">If fewer than three creators on your list reply, we find you new ones at no cost.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDING -->
+  <section class="section on-ink founding" id="book" aria-labelledby="founding-title">
+    <div class="wrap">
+      <div class="reveal">
+        <p class="label">Founding brands</p>
+        <h2 id="founding-title">Be one of our first ten.</h2>
+        <p class="lead">Half price on your first order. In return, we ask to share your results as a case study.</p>
+      </div>
+      <div class="reveal">
+        <a class="btn btn-primary" href="mailto:samuelaguda77@gmail.com?subject=Founding%20brand%20at%20Riselist">Claim a founding spot</a>
+        <p class="small founding-alt">Or write to <a class="founding-link" href="mailto:samuelaguda77@gmail.com">samuelaguda77@gmail.com</a>. We reply within one working day.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREATORS + FAQ -->
+  <section class="section" id="creators" aria-labelledby="creators-title">
+    <div class="wrap two">
+      <div class="reveal">
+        <p class="label">For creators</p>
+        <h2 id="creators-title">Are you a creator?</h2>
+        <p class="lead mt-16">We help brands find creators like you for paid work. We only use what is already public on your profile, and you can see, correct or remove it at any time.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/creators.html#claim">Claim your profile</a>
+          <a class="btn btn-ghost" href="/creators.html#remove">See or remove my data</a>
+        </div>
+      </div>
+      <div class="faq reveal">
+        <h2 class="faq-title">Questions</h2>
+        <details><summary>Where does your data come from?</summary><p>From public creator profiles, and from creators who connect their own accounts. A person on our team looks at every profile before it is added. We refresh the numbers every week.</p></details>
+        <details><summary>Are you part of TikTok?</summary><p>No. Riselist is an independent company. We are not connected to, or approved by, TikTok.</p></details>
+        <details><summary>Which countries do you work in?</summary><p>Everywhere. Tell us where your customers are and we find creators whose audience lives there.</p></details>
+        <details><summary>Do you guarantee sales?</summary><p>No one honestly can. What we do is stack the odds: creators with real reach, a trusted voice, and a record of selling.</p></details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="top">
+      <p class="wordmark">Riselist</p>
+      <nav aria-label="Legal and policies">
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/creators.html">Creator data and removal</a>
+        <a href="/cookies.html">Cookies</a>
+      </nav>
+    </div>
+    <div class="bottom">
+      <span>© 2026 Riselist, Lagos, Nigeria. Not affiliated with TikTok.</span>
+      <span><a href="mailto:samuelaguda77@gmail.com">samuelaguda77@gmail.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js" defer></script>
+</body>
+</html>
