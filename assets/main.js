@@ -211,7 +211,7 @@
       { id: 'finance', label: 'Money and apps', noun: 'money' },
       { id: 'travel', label: 'Travel', noun: 'travel' }
     ];
-    var GOALS = [{ id: 'sales', label: 'More sales' }, { id: 'awareness', label: 'Get noticed' }, { id: 'trend', label: 'Ride a trend' }];
+    var GOALS = [{ id: 'sales', label: 'More sales' }, { id: 'awareness', label: 'Get noticed' }, { id: 'trend', label: 'Join a trend' }];
     var SIZES = [
       { id: 'micro', label: '5k to 25k', min: 5000, max: 25000 },
       { id: 'mid', label: '25k to 100k', min: 25000, max: 100000 },
@@ -263,9 +263,9 @@
       if (state.goal === 'sales' && (c.s || c.z)) reasons.push(c.s ? 'already sells through a TikTok Shop' : 'runs a storefront');
       if (state.goal === 'trend' && p.parts.spike > 0.3) reasons.push('latest hit got ' + (c.t / c.m).toFixed(1) + '× their usual views');
       if (c.a < 8) reasons.push('almost never posts ads');
-      if (c.e >= 10.5) reasons.push('audience engages well above average');
+      if (c.e >= 10.5) reasons.push('lots of likes and comments for their size');
       reasons.push(p.inSize ? 'right in your size range' : 'close to your size range');
-      if (reasons.length < 2) reasons.push('steady views, video after video');
+      if (reasons.length < 2) reasons.push('gets steady views on every video');
       var tags = [];
       if ((c.g != null && c.g >= 25) || c.v >= 1.8) tags.push('<span class="tag hi">Rising</span>');
       if (c.a < 8) tags.push('<span class="tag">Rarely posts ads</span>');
